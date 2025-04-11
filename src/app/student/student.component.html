@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7 m-auto">
+      <form>
+        <div class="mb-3">
+          <label for="inputName" class="form-label">Nome:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputName"
+            aria-describedby="nameHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Digite o nome do Estudante.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="inputCourse" class="form-label">Curso:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputCourse"
+            aria-describedby="courseHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            Digite o curso do Estudante.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+
+      <h1>Alunos Cadastrados</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Curso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of students">
+            <th scope="row"> {{s.id}} </th>
+            <th> {{s.name}} </th>
+            <th> {{s.course}} </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

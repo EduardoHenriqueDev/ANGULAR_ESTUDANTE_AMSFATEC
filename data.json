@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Gabriela Neguinha",
+      "course": "ADS"
+    },
+    {
+      "id": 2,
+      "name": "Gabriela Escurinha",
+      "course": "ADM"
+    },
+    {
+      "id": 3,
+      "name": "Gabriela Escuridão",
+      "course": "GTI"
+    }
+  ]
+}
