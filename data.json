@@ -2,18 +2,23 @@
   "students": [
     {
       "id": 1,
-      "name": "Gabriela Neguinha",
+      "name": "Gabriela Cardoso",
       "course": "ADS"
     },
     {
       "id": 2,
-      "name": "Gabriela Escurinha",
+      "name": "Cauã Galvão",
       "course": "ADM"
     },
     {
       "id": 3,
-      "name": "Gabriela Escuridão",
+      "name": "Arthur Dos Anjos",
       "course": "GTI"
+    },
+    {
+      "id": 4,
+      "name": "Macacalves",
+      "course": "Inutil"
     }
   ]
 }
