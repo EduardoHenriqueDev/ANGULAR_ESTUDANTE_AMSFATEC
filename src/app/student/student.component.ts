@@ -25,17 +25,27 @@ export class StudentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getStudents().subscribe({
+    this.loadStudents();
+  }
+
+  loadStudents() {
+    this.service.getAll().subscribe({
       next: (json) => (this.students = json),
     });
   }
 
   save() {
-    this.service.saveStudent(this.formGroupStudent.value).subscribe({
+    this.service.save(this.formGroupStudent.value).subscribe({
       next: (json) => {
         this.students.push(json);
         this.formGroupStudent.reset();
       },
+    });
+  }
+
+  delete(student: Student) {
+    this.service.delete(student).subscribe({
+      next: () => this.loadStudents(),
     });
   }
 }

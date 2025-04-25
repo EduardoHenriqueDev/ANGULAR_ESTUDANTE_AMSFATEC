@@ -38,6 +38,7 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Curso</th>
+            <th scope="col">Funções</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,11 @@
             <th scope="row">{{ s.id }}</th>
             <td>{{ s.name }}</td>
             <td>{{ s.course }}</td>
+            <td>
+              <button class="btn btn-danger icon-btn" (click)="delete(s)">
+                <span class="material-symbols-outlined">delete</span>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>

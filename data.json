@@ -19,11 +19,12 @@
       "id": 4,
       "name": "Macacalves",
       "course": "Inutil"
-    },
+    }
+  ],
+  "courses": [
     {
-      "id": 5,
-      "name": "Macacalves",
-      "course": "Inutil"
+      "id": 1,
+      "course": "ADS"
     }
   ]
 }
