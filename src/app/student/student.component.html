@@ -10,19 +10,22 @@
             class="form-control"
             id="inputName"
             aria-describedby="nameHelp"
+            placeholder="Digite o nome do estudante"
           />
-          <div class="form-text">Digite o nome do Estudante.</div>
         </div>
         <div class="mb-3">
           <label for="inputCourse" class="form-label">Curso:</label>
-          <input
+          <select
             formControlName="course"
-            type="text"
             class="form-control"
             id="inputCourse"
             aria-describedby="courseHelp"
-          />
-          <div class="form-text">Digite o curso do Estudante.</div>
+          >
+            <option value="">Selecione um curso</option>
+            <option *ngFor="let c of courses" [value]="c.course">
+              {{ c.course }}
+            </option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary" (click)="save()">
           Salvar
@@ -46,9 +49,12 @@
             <th scope="row">{{ s.id }}</th>
             <td>{{ s.name }}</td>
             <td>{{ s.course }}</td>
-            <td>
-              <button class="btn btn-danger icon-btn" (click)="delete(s)">
+            <td class="icon-group">
+              <button class="btn delete-btn" (click)="delete(s)">
                 <span class="material-symbols-outlined">delete</span>
+              </button>
+              <button class="btn edit-btn" (click)="update(s)">
+                <span class="material-symbols-outlined">edit</span>
               </button>
             </td>
           </tr>

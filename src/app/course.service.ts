@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Course } from './course'
+import { Course } from './course';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,10 @@ export class CourseService {
   }
 
   saveCourse(course: Course): Observable<Course> {
-    return this.http.post<Course>(this.apiUrl, Course);
+    return this.http.post<Course>(this.apiUrl, course);
+  }
+
+  deleteCourse(course: Course): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${course.id}`);
   }
 }

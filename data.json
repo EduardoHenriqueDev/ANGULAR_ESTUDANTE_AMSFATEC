@@ -19,12 +19,29 @@
       "id": 4,
       "name": "Macacalves",
       "course": "Inutil"
+    },
+    {
+      "id": 6,
+      "name": "Macacalves",
+      "course": "ADS"
     }
   ],
   "courses": [
     {
       "id": 1,
       "course": "ADS"
+    },
+    {
+      "id": 2,
+      "course": "Criolagem"
+    },
+    {
+      "id": 3,
+      "course": "ADM"
+    },
+    {
+      "id": 4,
+      "course": "GTI"
     }
   ]
 }

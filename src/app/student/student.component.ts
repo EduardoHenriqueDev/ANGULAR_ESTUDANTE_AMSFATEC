@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class StudentComponent implements OnInit {
   students: Student[] = [];
+  courses: any[] = [];
   formGroupStudent: FormGroup;
 
   constructor(
@@ -26,11 +27,18 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadStudents();
+    this.loadCourses();
   }
 
   loadStudents() {
     this.service.getAll().subscribe({
       next: (json) => (this.students = json),
+    });
+  }
+
+  loadCourses() {
+    this.service.getSelect().subscribe({
+      next: (json) => (this.courses = json),
     });
   }
 
@@ -45,6 +53,12 @@ export class StudentComponent implements OnInit {
 
   delete(student: Student) {
     this.service.delete(student).subscribe({
+      next: () => this.loadStudents(),
+    });
+  }
+
+  update(student: Student) {
+    this.service.update(student).subscribe({
       next: () => this.loadStudents(),
     });
   }
