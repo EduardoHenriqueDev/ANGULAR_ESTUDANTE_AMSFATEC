@@ -9,7 +9,7 @@ import { Course } from './course';
 export class CourseService {
   apiUrl = 'http://localhost:3000/courses';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.apiUrl);
@@ -21,5 +21,9 @@ export class CourseService {
 
   deleteCourse(course: Course): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${course.id}`);
+  }
+
+  updateCourse(course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/${course.id}`, course);
   }
 }

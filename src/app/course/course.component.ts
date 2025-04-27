@@ -12,6 +12,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CourseComponent implements OnInit {
   courses: Course[] = [];
   formGroupCourse: FormGroup;
+  isEditMode: boolean = false;
+  currentCourseId: number | null = null;
 
   constructor(
     private service: CourseService,
@@ -20,6 +22,9 @@ export class CourseComponent implements OnInit {
     this.formGroupCourse = formBuilder.group({
       id: [''],
       course: [''],
+      abbreviation: [''],
+      axis: [''],
+      schedule: ['']
     });
   }
 
@@ -45,6 +50,33 @@ export class CourseComponent implements OnInit {
   deleteCourse(course: Course) {
     this.service.deleteCourse(course).subscribe({
       next: () => this.loadCourse(),
+    });
+  }
+
+  editCourse(course: Course) {
+    this.isEditMode = true;
+    this.currentCourseId = course.id;
+    this.formGroupCourse.setValue({
+      id: course.id,
+      course: course.course,
+      abbreviation: course.abbreviation,
+      axis: course.axis,
+      schedule: course.schedule
+    });
+  }
+
+  closeEditMode() {
+    this.isEditMode = false;
+    this.formGroupCourse.reset();
+  }
+
+  updateCourse() {
+    const updatedCourse = this.formGroupCourse.value;
+    this.service.updateCourse(updatedCourse).subscribe({
+      next: () => {
+        this.loadCourse();
+        this.closeEditMode();
+      },
     });
   }
 }

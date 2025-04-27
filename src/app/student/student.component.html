@@ -3,26 +3,15 @@
     <div class="col-md-6">
       <form [formGroup]="formGroupStudent">
         <div class="mb-3">
-          <label for="inputName" class="form-label">Nome:</label>
-          <input
-            formControlName="name"
-            type="text"
-            class="form-control"
-            id="inputName"
-            aria-describedby="nameHelp"
-            placeholder="Digite o nome do estudante"
-          />
+          <label for="inputName" class="form-label"> <strong>Nome:</strong> </label>
+          <input formControlName="name" type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
+            placeholder="Digite o nome do estudante..." />
         </div>
         <div class="mb-3">
-          <label for="inputCourse" class="form-label">Curso:</label>
-          <select
-            formControlName="course"
-            class="form-control"
-            id="inputCourse"
-            aria-describedby="courseHelp"
-          >
+          <label for="inputCourse" class="form-label"> <strong>Curso:</strong> </label>
+          <select formControlName="course" class="form-control" id="inputCourse" aria-describedby="courseHelp">
             <option value="">Selecione um curso</option>
-            <option *ngFor="let c of courses" [value]="c.course">
+            <option *ngFor="let c of courses" [value]="c.abbreviation">
               {{ c.course }}
             </option>
           </select>

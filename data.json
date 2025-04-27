@@ -16,11 +16,6 @@
       "course": "GTI"
     },
     {
-      "id": 4,
-      "name": "Macacalves",
-      "course": "Inutil"
-    },
-    {
       "id": 6,
       "name": "Macacalves",
       "course": "ADS"
@@ -29,19 +24,38 @@
   "courses": [
     {
       "id": 1,
-      "course": "ADS"
+      "course": "Analise e Desenvolvimento de Sistemas",
+      "abbreviation": "ADS",
+      "axis": "Tecnologia",
+      "schedule": "Noturno"
     },
     {
       "id": 2,
-      "course": "Criolagem"
+      "course": "Engenharia de Software",
+      "abbreviation": "ES",
+      "axis": "Tecnologia",
+      "schedule": "Matutino"
     },
     {
       "id": 3,
-      "course": "ADM"
+      "course": "Administração",
+      "abbreviation": "ADM",
+      "axis": "Gestão e Negócios",
+      "schedule": "Vespertino"
     },
     {
       "id": 4,
-      "course": "GTI"
+      "course": "Gestão da Tecnologia da Informação",
+      "abbreviation": "GTI",
+      "axis": "Tecnologia",
+      "schedule": "Noturno"
+    },
+    {
+      "id": 6,
+      "course": "neguinho",
+      "abbreviation": "neg",
+      "axis": "Tecnologia",
+      "schedule": "Noturno"
     }
   ]
 }
