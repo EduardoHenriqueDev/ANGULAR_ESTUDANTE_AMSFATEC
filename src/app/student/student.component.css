@@ -1,5 +1,32 @@
+.btn-primary {
+  width: 100%;
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+}
+
+.form-control,
+.form-check-input {
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.form-check-input:checked {
+  background-color: #333;
+  border-color: #333;
+}
+
 .delete-btn {
-  color: #ff0000;
   border: none;
   border-radius: 50%;
   width: 30px;
@@ -8,7 +35,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
   font-size: 24px;
 }
 
@@ -21,20 +48,20 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
   font-size: 24px;
+}
+
+.delete-btn:hover {
+  color: #ff0000;
+}
+
+.edit-btn:hover {
+  color: #ff0000;
 }
 
 .icon-group {
   display: flex;
   gap: 8px;
   align-items: center;
-}
-
-.form-control {
-  border-radius: 50px;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
