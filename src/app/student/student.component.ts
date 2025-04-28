@@ -13,6 +13,8 @@ export class StudentComponent implements OnInit {
   students: Student[] = [];
   courses: any[] = [];
   formGroupStudent: FormGroup;
+  isEditMode: boolean = false;
+  currentStudentId: number | null = null;
 
   constructor(
     private service: StudentService,
@@ -57,9 +59,29 @@ export class StudentComponent implements OnInit {
     });
   }
 
-  update(student: Student) {
-    this.service.update(student).subscribe({
-      next: () => this.loadStudents(),
+  edit(student: Student) {
+    this.isEditMode = true;
+    this.currentStudentId = student.id;
+    this.formGroupStudent.setValue({
+      id: student.id,
+      name: student.name,
+      course: student.course,
     });
   }
+
+  closeEditMode() {
+    this.isEditMode = false;
+    this.formGroupStudent.reset();
+  }
+
+  update() {
+    const updatedStudent = this.formGroupStudent.value;
+    this.service.update(updatedStudent).subscribe({
+      next: () => {
+        this.loadStudents();
+        this.closeEditMode();
+      },
+    });
+  }
+
 }

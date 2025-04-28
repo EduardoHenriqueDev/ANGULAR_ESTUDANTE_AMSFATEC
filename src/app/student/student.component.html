@@ -42,13 +42,43 @@
               <button class="btn delete-btn" (click)="delete(s)">
                 <span class="material-symbols-outlined">delete</span>
               </button>
-              <button class="btn edit-btn" (click)="update(s)">
+              <button class="btn edit-btn" (click)="edit(s)">
                 <span class="material-symbols-outlined">edit</span>
               </button>
             </td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isEditMode" class="modal fade show" tabindex="-1" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Aluno</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" (click)="closeEditMode()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formGroupStudent">
+          <div class="mb-3">
+            <label for="inputCourse" class="form-label">Nome:</label>
+            <input formControlName="name" type="text" class="form-control"
+              placeholder="Digite o nome completo do curso" />
+          </div>
+          <div class="mb-3">
+            <label for="inputAbbreviation" class="form-label">Curso:</label>
+            <select formControlName="course" class="form-control" id="inputCourse" aria-describedby="courseHelp">
+              <option value="">Selecione um curso</option>
+              <option *ngFor="let c of courses" [value]="c.abbreviation">
+                {{ c.course }}
+              </option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="update()">Salvar</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

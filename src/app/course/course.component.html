@@ -119,18 +119,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let s of courses">
-            <th scope="row">{{ s.id }}</th>
-            <td>{{ s.course | slice:0:15 }}{{ s.course.length > 15 ? '...' : '' }}</td>
-            <td> {{ s.abbreviation }} </td>
-            <td> {{ s.axis | slice:0:10 }}{{ s.axis.length > 10 ? '...' : '' }} </td>
-            <td> {{ s.schedule }} </td>
+          <tr *ngFor="let c of courses">
+            <th scope="row">{{ c.id }}</th>
+            <td>{{ c.course | slice:0:15 }}{{ c.course.length > 15 ? '...' : '' }}</td>
+            <td> {{ c.abbreviation }} </td>
+            <td> {{ c.axis | slice:0:10 }}{{ c.axis.length > 10 ? '...' : '' }} </td>
+            <td> {{ c.schedule }} </td>
             <td class="icon-group">
               <button class="btn delete-btn">
-                <span class="material-symbols-outlined" (click)="deleteCourse(s)">delete</span>
+                <span class="material-symbols-outlined" (click)="deleteCourse(c)">delete</span>
               </button>
               <button class="btn edit-btn">
-                <span class="material-symbols-outlined" (click)="editCourse(s)">edit</span>
+                <span class="material-symbols-outlined" (click)="editCourse(c)">edit</span>
               </button>
             </td>
           </tr>
